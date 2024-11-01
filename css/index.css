@@ -5,12 +5,13 @@ body, html {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
+    
 }
 
 header {
     max-width: 80%;
     margin: 0 auto; 
-    padding: 0 20px; 
+    padding: 0 5%; 
     background-color: white;
     display: flex;
     align-items: center;
@@ -23,13 +24,13 @@ header {
 }
 
 .logo {
-    width: 50px; 
-    height: 50px;
-    margin-right: 10px;
+    width: 3em; 
+    height: 3em;
+    margin-right: 0.5em;
 }
 
 .logo-text {
-    font-size: 30px;
+    font-size: 2em;
     color: rgb(24, 96, 74);
     font-family: Arima, Arial, Helvetica, sans-serif
 }
@@ -41,13 +42,13 @@ header {
 
 nav {
     display: flex;
-    gap: 50px; /* Espacio entre los elementos del menú */
+    gap: 2em; /* Espacio entre los elementos del menú */
 }
 
 nav a {
     color: rgb(24, 96, 74);
     text-decoration: none;
-    font-size: 16px;
+    font-size: 1em;
     position: relative;
 }
 
@@ -57,19 +58,19 @@ nav a:hover {
 
 
 .search-container {
-    border: 2px solid rgb(24, 96, 74);
+    border: 0.2em solid rgb(24, 96, 74);
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    width: 3em;
+    height: 3em;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 20px; 
+    margin-left: 1em; 
 }
 
 .search-container img {
-    width: 30px;
-    height: 30px;
+    width: 1.5em;
+    height: 1.5em;
 }
 
 
@@ -82,19 +83,19 @@ nav a:hover {
     background-image: url('/img/inicio.jpg'); 
     background-size: cover; 
     background-position: center; 
-    padding: 100px; 
+    padding: 5em 10%; 
     color: rgb(24, 96, 74);
     text-align: center; 
-    margin-top: 30px;
+    margin-top: 2em;
 }
 
 .incio-content h1 {
-    font-size: 40px; 
-    margin: 0 0 20px; 
+    font-size: 2.5em; 
+    margin: 0 0 1em; 
 }
 
 .inicio-content p {
-    font-size: 18px; 
+    font-size: 1.125em; 
     font-family: Arial, Helvetica, sans-serif;
     margin-bottom: 30px; 
 }
@@ -106,7 +107,7 @@ nav a:hover {
 }
 
 main {
-    max-width: 1200px; 
+    max-width: 75%; 
     margin: 0 auto; 
     padding: 0 10%; 
 }
@@ -114,9 +115,9 @@ main {
 .recipes {
     display: flex;
     flex-direction: column; 
-    gap: 20px; 
+    gap: 1.25em; 
     margin-bottom: 20px;
-    margin-top: 30px;
+    margin-top: 2em;
 }
 
 .recipes h2 {
@@ -135,8 +136,8 @@ main {
 .recipe-grid {
     display: flex;
     flex-direction:row;
-    gap: 20px; /* Espacio entre las recetas */
-    padding: 10px; 
+    gap: 1.25em; /* Espacio entre las recetas */
+    padding: 0.5em; 
     flex-wrap: wrap;
     align-items: stretch;
 }
@@ -149,12 +150,12 @@ main {
     flex-direction: column;
     justify-content: space-between; 
     height: 100%;
-    flex-basis: calc(33.333% - 20px);
+    flex-basis: calc(33.333% - 1.25em);
 }
 
 .recipe-image {
     width: 100%; 
-    height: 200px; 
+    height: 12.5em; 
     object-fit: cover; 
 }
 
@@ -169,19 +170,19 @@ main {
 
 .recipe-title {
     margin: 0;
-    font-size: 16px;
-    padding: 10px 0;
+    font-size: 1em;
+    padding: 0.625em 0;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 .recipe-button {
     display: inline-block;
-    padding: 10px 15px;
+    padding: 0.625em 1em;
     background-color: rgba(24, 96, 74, 0.703); 
     color: white;
     text-decoration: none; 
     border-radius: 5px; 
-    font-size: 14px; 
+    font-size: 0.875em; 
     margin-top: auto;
 }
 
@@ -201,18 +202,21 @@ main {
 }
 
 .form fieldset{
+    position: relative;
+    width: 100%;
+    max-width: 50%;
+    margin: 0;
     color: black;
     border-color: rgb(24, 96, 74);
-    width: 50%;
     font-family: Arial, sans-serif;
-    font-style:normal;
-    text-align:initial;
+    font-style: normal;
+    text-align: initial;
 }
 
 .form h2 {
     color: rgba(255, 140, 0, 0.878);
     font-family: Domine,Arial, Helvetica, sans-serif;
-    font-size: 27px;
+    font-size: 1.7em;
 }
 
 .form-info {
@@ -221,24 +225,73 @@ main {
 }
 
 .enviar-button {
-    position: absolute; 
-    top: 5vw; 
-    bottom: 2vw; 
-    left: 36vw;
-    width: 3vw;
-    background-color: rgba(255, 140, 0, 0.878); 
-    color: white; 
-    border-radius: 5px; 
+    position: absolute;
+    right: 3%; 
+    top: 50%; 
+    transform: translateY(-50%);
+    background-color: rgba(255, 140, 0, 0.878);
+    color: white;
+    border-radius: 5px;
     border: none;
-    font-size: 24px; 
-    display: flex; 
-    align-items: center; 
+    padding: 5em 1.3em;
+    font-size: 1.125em;
+    display: inline-flex;
+    align-items: center;
     justify-content: center;
+    height: 60%;
+    
 }
 
 .enviar-button:hover {
     background-color: rgba(255, 140, 0, 1); /* Cambio de color al pasar el mouse */
 }
+
+.opiniones {
+    padding: 2em;
+    text-align: center;
+    background-color: #387c8360; 
+    margin-top: 3em;
+}
+
+.opiniones h2 {
+    font-family: Domine,Arial, Helvetica, sans-serif;
+    font-size: 27px;
+    color: rgb(20, 66, 52);
+}
+
+.opinion-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.opinion {
+    position: relative;
+    padding: 2em;
+    background-color: white;
+    border: 0.2em solid #ddd;
+    border-radius: 0.5em;
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.1);
+    font-family: Arial, Helvetica, sans-serif;
+    max-width: 80%;
+}
+
+.opinion-texto {
+    font-size: 1em; /* Relativo al tamaño de fuente base */
+    color: #333;
+    margin: 0;
+}
+
+.opinion-autor {
+    position: absolute;
+    bottom: 0.5em; 
+    right: 0.5em; 
+    font-size: 0.875em;
+    font-style: italic;
+    color: #666;
+    margin: 0;
+}
+
 
 footer .community-section {
     background-image:url(/img/collage.jpg); 
@@ -324,4 +377,109 @@ footer .social-media a {
     bottom: none;
     margin-left: 10px;
     
+}
+
+@media (max-width: 768px) {
+    .logo {
+        width: 2.5em;
+        height: 2.5em;
+    }
+
+    .logo-text {
+        font-size: 1.5em;
+    }
+
+    .inicio-section {
+        padding: 3em 5%;
+    }
+
+    .inicio-content h1 {
+        font-size: 2em;
+    }
+
+    nav {
+        gap: 1em;
+    }
+
+    .search-container {
+        width: 2.5em;
+        height: 2.5em;
+    }
+
+    .recipes {
+        gap: 1em;
+    }
+
+    .recipe {
+        flex-basis: calc(50% - 1em);
+    }
+
+    .recipe-title {
+        font-size: 0.875em;
+    }
+
+    .recipe-button {
+        padding: 0.5em;
+        font-size: 0.75em;
+    }
+
+    .form fieldset {
+        width: 100%; /* Ancho completo en pantallas pequeñas */
+        padding-right: 2em; /* Espacio para el botón */
+    }
+
+    .enviar-button {
+        padding: 1em 1em; /* Reduce padding en pantallas pequeñas */
+        font-size: 1em;
+        height: auto;
+        right: 1em;
+    }
+}
+
+/* Pantallas pequeñas */
+@media (max-width: 480px) {
+    header {
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    .logo {
+        width: 2em;
+        height: 2em;
+    }
+
+    .logo-text {
+        font-size: 1.25em;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 0.5em;
+    }
+
+    .inicio-section {
+        padding: 2em;
+    }
+
+    .inicio-content h1 {
+        font-size: 1.5em;
+    }
+
+    .recipe {
+        flex-basis: 100%;
+    }
+
+    .recipe-title {
+        font-size: 0.875em;
+    }
+
+    .recipe-button {
+        padding: 0.5em 0.75em;
+        font-size: 0.75em;
+    }
+
+    .opinion {
+        max-width: 100%;
+        padding: 1.5em;
+    }
 }
