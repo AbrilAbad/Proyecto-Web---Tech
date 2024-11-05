@@ -482,4 +482,11 @@ footer .social-media a {
         max-width: 100%;
         padding: 1.5em;
     }
+
+    .enviar-button {
+        background-color: rgba(255, 140, 0, 0.878);
+        color: white;
+        border-radius: 5px;
+        border: none;
+      }
 }
