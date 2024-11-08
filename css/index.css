@@ -80,7 +80,7 @@ nav a:hover {
     align-items: center; 
     justify-content: center; 
     flex-direction: column; 
-    background-image: url('img/inicio.jpg'); 
+    background-image: url('/img/inicio.jpg'); 
     background-size: cover; 
     background-position: center; 
     padding: 5em 10%; 
