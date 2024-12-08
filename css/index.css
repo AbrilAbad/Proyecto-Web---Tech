@@ -5,7 +5,6 @@ body, html {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    
 }
 
 header {
@@ -42,7 +41,7 @@ header {
 
 nav {
     display: flex;
-    gap: 2em; /* Espacio entre los elementos del menú */
+    gap: 2em;
 }
 
 nav a {
@@ -118,6 +117,7 @@ main {
     gap: 1.25em; 
     margin-bottom: 20px;
     margin-top: 2em;
+    position: relative;
 }
 
 .recipes h2 {
@@ -125,6 +125,25 @@ main {
     margin-bottom: 0; 
     font-family: Domine,Arial, Helvetica, sans-serif;
     font-size: 27px;
+    display: inline-block;
+}
+
+.btnVerTodas {
+    position: absolute;
+    right: 0;
+    top: 30px;
+    padding: 0.625em 1.25em;
+    color: rgb(24, 96, 74);
+    background-color: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 19px;
+    font-family: Domine,Arial, Helvetica, sans-serif;
+}
+
+.btnVerTodas:hover {
+    border: 2px solid rgb(24, 96, 74); 
+   
 }
 
 .recipes p {
@@ -136,7 +155,7 @@ main {
 .recipe-grid {
     display: flex;
     flex-direction:row;
-    gap: 1.25em; /* Espacio entre las recetas */
+    gap: 1.25em; 
     padding: 0.5em; 
     flex-wrap: wrap;
     align-items: stretch;
@@ -277,7 +296,7 @@ main {
 }
 
 .opinion-texto {
-    font-size: 1em; /* Relativo al tamaño de fuente base */
+    font-size: 1em; 
     color: #333;
     margin: 0;
 }
@@ -424,12 +443,12 @@ footer .social-media a {
     }
 
     .form fieldset {
-        width: 100%; /* Ancho completo en pantallas pequeñas */
-        padding-right: 2em; /* Espacio para el botón */
+        width: 100%; 
+        padding-right: 2em; 
     }
 
     .enviar-button {
-        padding: 1em 1em; /* Reduce padding en pantallas pequeñas */
+        padding: 1em 1em; 
         font-size: 1em;
         height: auto;
         right: 1em;

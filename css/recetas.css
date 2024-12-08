@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Arima:wght@100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Domine:wght@400..700&display=swap');
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(21, 83, 64, 0.903);
+    color: #fff;
+    padding: 30px;
+}
+
+header .logo-container h1 {
+    margin: 0;
+    font-size: 1.8em;
+    font-family: Arima, Arial, Helvetica, sans-serif;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+nav a.active, nav a:hover {
+    color: rgb(255, 163, 51);
+}
+ 
+main {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+h2 {
+    text-align: left;
+    margin-bottom: 20px;
+    margin-left: 8.5%;
+    color: rgb(24, 85, 96);
+    margin-bottom: 0; 
+    font-family: Domine,Arial, Helvetica, sans-serif;
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.card {
+    display: flex;
+    flex-direction:row;
+    background-color: rgba(164, 204, 192, 0.538);
+    border-radius: 8px;
+    border-color:  rgba(255, 140, 0, 0.878);
+    width: 80%;
+    margin: 10px auto;
+    padding: 20px;
+    gap: 20px;
+}
+
+.card-content {
+    flex: 1;
+    text-align: left;
+}
+
+.card-img {
+    width: 30%; 
+    height: 16em; 
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.card-title {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #033018;
+    font-family: Domine,Arial, Helvetica, sans-serif;
+}
+
+.card-title2 {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #033018;
+    font-family: Domine,Arial, Helvetica, sans-serif;
+}
+
+.card p {
+    font-size: 1em;
+    color: #383838;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+footer .piedepag{
+    text-align: right;
+    padding: 50px;
+    background-color: rgba(21, 83, 64, 0.903);
+    border-top: none;
+    color: white;
+    margin-top: 0;
+    margin: 0;
+}
+footer .derechos {
+    text-align: center;
+}
+
+.social-media {
+    text-align: left;
+    margin: 0px;
+}
+
+footer .social-media a {
+    margin: 0px; 
+}
+
+.social-icon {
+    color: white;
+    display: flex;
+    gap: 15px; /* Espacio entre los iconos */
+    bottom: none;
+    margin-left: 10px;
+    
+}
+
+@media (max-width: 768px) {
+    .card {
+        flex-direction: column; /* Cambia a disposición vertical en pantallas pequeñas */
+        width: 90%; /* Ocupa el 90% del ancho en pantallas pequeñas */
+    }
+
+    .card-img, .card-content {
+        width: 100%; /* Imagen y texto ocupan todo el ancho */
+        order: unset; /* Restablece el orden para diseño vertical */
+    }
+}
