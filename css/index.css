@@ -433,6 +433,15 @@ footer .social-media a {
         flex-basis: calc(50% - 1em);
     }
 
+    .btnVerTodas {
+        position: static;
+        display: block;
+        margin: 1em auto 0;
+        text-align: center;
+        font-size: 17px;
+        padding: 0.5em 1em;
+    }
+
     .recipe-title {
         font-size: 0.875em;
     }
@@ -455,7 +464,7 @@ footer .social-media a {
     }
 }
 
-/* Pantallas pequeñas */
+
 @media (max-width: 480px) {
     header {
         flex-direction: column;
@@ -490,6 +499,13 @@ footer .social-media a {
 
     .recipe-title {
         font-size: 0.875em;
+    }
+
+    .btnVerTodas {
+        font-size: 15px; 
+        padding: 0.5em; 
+        width: 100%; 
+        margin: 1em 0; 
     }
 
     .recipe-button {

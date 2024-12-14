@@ -40,10 +40,9 @@ main {
 
 h2 {
     text-align: left;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     margin-left: 8.5%;
     color: rgb(24, 85, 96);
-    margin-bottom: 0; 
     font-family: Domine,Arial, Helvetica, sans-serif;
     font-size: 1.8em;
     font-weight: bold;
@@ -58,7 +57,7 @@ h2 {
     width: 80%;
     margin: 10px auto;
     padding: 20px;
-    gap: 20px;
+    gap: 30px;
 }
 
 .card-content {
@@ -96,6 +95,39 @@ h2 {
     text-align: justify;
 }
 
+.btnVerPrep {
+    font-size: 1.002em;
+    font-weight: bold;
+    margin: 10px 0px;
+    color: #033018;
+    padding: 0.610em 1.10em;
+    font-family: Domine,Arial, Helvetica, sans-serif;
+    background-color: none;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.btnPrep:hover {
+    border: 2px solid rgb(24, 96, 74); 
+}
+
+.btnFav {
+    display: block;
+    margin: 10px auto 0;
+    padding: 10px 15px;
+    background-color: #033018;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: Domine, Arial, Helvetica, sans-serif;
+    margin-right: 0px;
+}
+
+.btnFav:hover {
+    border: 2px solid rgb(24, 96, 74); 
+}
+
 footer .community-section {
     background-image:url(/img/collage.jpg); 
     background-size: cover; 
@@ -130,7 +162,7 @@ footer .community-content h3 {
     font-size: 20px; 
     margin-bottom: 20px; 
     font-family: Arial, Helvetica, sans-serif;
-}
+} 
 
 .join-button {
     background-color: rgb(249, 168, 54); 
@@ -178,6 +210,11 @@ footer .social-media a {
 }
 
 @media (max-width: 768px) {
+
+    nav {
+        gap: 1em;
+    }
+
     .card {
         flex-direction: column; /* Cambia a disposición vertical en pantallas pequeñas */
         width: 90%; /* Ocupa el 90% del ancho en pantallas pequeñas */
@@ -187,4 +224,17 @@ footer .social-media a {
         width: 100%; /* Imagen y texto ocupan todo el ancho */
         order: unset; /* Restablece el orden para diseño vertical */
     }
+}
+
+@media (max-width: 480px) {
+    header {
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 0.5em;
+    }
+    
 }
