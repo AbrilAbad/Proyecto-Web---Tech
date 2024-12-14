@@ -1,5 +1,6 @@
 let recetas = [
     {
+        "id" : 1,
         "nombre" : "Sopa de Calabaza",
         "ingredientes": "Calabaza mediana, pelada y cortada en cubos - 1kg, Cebolla grande picada- 1u, Caldo de verduras - 1l, Crema de leche - 200ml (opcional), Aceite de oliva - 2c, Sal, Pimienta",
         "porciones": 4,
@@ -16,6 +17,7 @@ let recetas = [
     },
 
     {
+        "id": 2,
         "nombre" : "Arepas Venezolanas",
         "ingredientes": "Para las arepas: Harina de maíz blanca precocida - 300g, Sal - 10g, Agua - 500ml, Manteca - 10g.  "+
         "Para el relleno: Aceite de oliva - 1c, Cebolla - 1/2, Pechugas de pollo en filetes finos - 150g, Sal, Pimienta, Palta - 1u, Mayonesa - 1c.",
@@ -35,6 +37,7 @@ let recetas = [
     },
 
     {
+        "id": 3, 
         "nombre" : "Pollo Karahi",
         "ingredientes": "Pechuga de pollo deshuesada - 750g, Tomates triturados - 1kg, Cebolla roja grande - 1u, Dientes de ajo - 3u, Jengibre fresco - 1 trozo, Copos de chile rojo - 3ctas, Garam masala - 1c, Cilantro molido - 1cta, Comino molido - 1cta, Cúrcuma molida - 1cta, Ghee derretido - 6c (o aceite vegetal), Agua hirviendo - 1/2 taza, Sal, Hojas de cilantro picadas - 3c, Pimientos verdes picantes - 2u, Zumo de limón.",
         "porciones": 8,
@@ -52,6 +55,7 @@ let recetas = [
     },
 
     {
+        "id": 4, 
         "nombre" : "Tallarines con Salsa de Tomate",
         "ingredientes": "Tallarines - 400g, Cebolla picada - 1u, Dientes de ajo picados - 1u, Aceite de oliva - 2c, Tomate triturado - 800g, Sal, Pimienta, Orégano.",
         "porciones": 4,
@@ -61,8 +65,8 @@ let recetas = [
         "2. Cuando estén al dente, escurrirlos y reservarlos. " +
         "3. En una sartén grande, calentar el aceite de oliva y fritar la cebolla y el ajo a fuego medio-bajo hasta que estén blandos y transparentes, unos 15 minutos. " +
         "4. Añadir el tomate triturado, con sal y pimienta a gusto. Añadir también un poco de orégano si te gusta. Dejar que la salsa se cocine a fuego medio-alto hasta que espese un poco, unos 10 minutos más. " +
-        "Añadir la salsa de tomate a los tallarines y remover, o si lo prefieres emplátalo colocando una ración de tallarines y añadiendo 2 o 3 cucharas de la salsa de tomate por encima. Servir caliente. "
-    }
+        "5. Añadir la salsa de tomate a los tallarines y remover, o si lo prefieres emplátalo colocando una ración de tallarines y añadiendo 2 o 3 cucharas de la salsa de tomate por encima. Servir caliente. "
+    },
     
 ]
 
@@ -77,26 +81,80 @@ let contenedorIndividual = document.createElement('div');
 contenedorIndividual.classList.add('card-container');
 
 
-function crearItems() {
-    recetas.forEach(receta => {
-      contenedorIndividual.innerHTML += `
-        <div class="card">
-         <img src="${receta.imagen}" alt="${receta.nombre}" class="card-img">
-         <form onsubmit="addReceta()">
-          <div class="card-content">
-            <h5 id="Nombre" class="card-title"> ${receta.nombre}</h5>
-            <h5 id="Ingredientes" class="card-title2"> Ingredientes: </h5>
-            <p id="Ingredientes" class="card-text"> ${receta.ingredientes} </p>
-            <h5 id="Cantidad de porciones" class="card-title2"> Porciones: ${receta.porciones} </h5> 
-            <h5 id="Tiempo de Cocción" class="card-title2"> Tiempo de cocción: ${receta.tiempoCoccion} min.</h5>
-            <h5 id="Preparacion" class="card-title2"> Preparación: </h5>
-            <p id="preparación">
-              ${receta.preparacion} 
-            </p>
-          </div>
+document.addEventListener("DOMContentLoaded", (event) => {
+  recetas.forEach(receta => {
+    contenedorIndividual.innerHTML += `
+      <div class="card">
+       <img src="${receta.imagen}" alt="${receta.nombre}" class="card-img">
+       <form id="my_form${receta.id}">
+        <div class="card-content">
+          <h5 id="nombre" name="nombre" class="card-title"> ${receta.nombre}</h5>
+          <h5 id="ingredientes" class="card-title2"> Ingredientes: </h5>
+          <p id="ingredientes" class="card-text"> ${receta.ingredientes} </p>
+          <h5 id="porciones" name="porciones" class="card-title2"> Porciones: ${receta.porciones} </h5> 
+          <h5 id="tiempoCoccion" name="tiempoCoccion" class="card-title2"> Tiempo de cocción: ${receta.tiempoCoccion} min.</h5>
+          <button id="btnVerPrep${receta.id}" class="btnVerPrep" onclick="mostrarPrep(${receta.id})"> Ver preparación </button>
+          <div id="preparacion${receta.id}" class="preparacion" style="display: none;">
+              <h5 id="preparacion" class="card-title2"> Preparación:</h5>
+              <p id="preparacion" class="card-text">${receta.preparacion}</p>
+           </div>
+          <h5 id="botonera${receta.id}">
+            <button onclick="añadirFav(${receta.id})" class="btnFav" value="Añadir">Añadir a favoritos</button>
+         </h5> 
         </div>
+      </div>
 
-      `;
-      contenedorRecetas.append(contenedorIndividual);
-    });
+    `;
+    contenedorRecetas.append(contenedorIndividual);
+  });
+});
+
+
+function mostrarPrep(id) {
+  event.preventDefault();
+  let idz = id.toString();
+
+  let param = 'preparacion' + idz;
+  let btnVerPrep = 'botonera' + idz;
+  let btnFav = 'btnVerPrep' + idz;
+
+  //ocultamos o mostramos los elementos
+  document.getElementById(param).style.display = "block";
+  document.getElementById(btnFav).style.display = "none";
+}
+
+
+function añadirFav(id) {
+  let idz= id.toString();
+  let param= 'my_form' + idz;
+  let form = document.getElementById(param);
+
+  console.info('Tipo ' + typeof form);
+
+  let nombre = form.elements['nombre'].value;
+  let porciones = form.elements['porciones'].value;
+  let tiempoCoccion = form.elements['tiempoCoccion'].value;
+
+  console.log("Nombre: " + nombre);
+  console.log("Porciones: " + porciones);
+  console.log("Tiempo de cocción: " + tiempoCoccion);
+
+  let itemFav = {
+    "id": idz,
+    "nombre" : nombre,
+    "porciones" : porciones,
+    "tiempoCoccion" : tiempoCoccion,
   }
+
+  if (typeof(Storage) !== "undefined") {
+    localStorage.setItem(itemFav.id, JSON.stringify(itemFav));
+  } 
+  
+  return false;
+}
+
+
+let lista = document.getElementById("listaFavoritos");
+Object.keys(localStorage).forEach(function(key){
+  lista.innerHTML += localStorage.getItem(key);
+});
